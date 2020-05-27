@@ -46,7 +46,7 @@ public class MyList<E> implements Iterable<E> {
             if (isNext()) {
                 next.add(element);
             } else {
-                E temp = this.element;
+                Node<E> temp = this;
                 next = new Node<>(element);
                 next.setPrev(temp);
             }
@@ -60,8 +60,8 @@ public class MyList<E> implements Iterable<E> {
             return next != null;
         }
 
-        void setPrev (E element) {
-            prev = this;
+        void setPrev (Node<E> node) {
+            prev = node;
         }
     }
 }
